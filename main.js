@@ -70,8 +70,14 @@ const sandra = personFromPersonStore('Sandra', 26);
 
 
 /*** CHALLENGE 4 ***/
-
+/*Without editing the code you've already written, add an introduce method to the personStore object that logs "Hi, my name is [name]".
+*/
 // add code here
+
+personStore.introduce = function(){
+  console.log(`Hi, my name is ${this.name}`);
+};
+
 
 // sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
@@ -84,17 +90,20 @@ const sandra = personFromPersonStore('Sandra', 26);
 ****************************************************************/
 
 /*** CHALLENGE 5 ***/
-
+/*Create a function PersonConstructor that uses the this keyword to save a single property onto its scope called greet. greet should be a function that logs the string 'hello'.
+*/
 function PersonConstructor() {
 	// add code here
-
+	this.greet = function(){
+    console.log("Hello");
+  }
 
 }
 
 
 // /********* Uncomment this line to test your work! *********/
-const simon = new PersonConstructor;
-// simon.greet(); // -> Logs 'hello'
+const simon = new PersonConstructor();
+//simon.greet(); // -> Logs 'hello'
 
 
 
