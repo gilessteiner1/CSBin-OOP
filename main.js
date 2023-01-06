@@ -135,7 +135,7 @@ PersonConstructor.prototype.introduce = function(){
   console.log(`Hi, my name is ${this.name}`);
 };
 
-mike.introduce(); // -> Logs 'Hi, my name is Mike'
+//mike.introduce(); // -> Logs 'Hi, my name is Mike'
 
 
 /****************************************************************
@@ -143,16 +143,15 @@ mike.introduce(); // -> Logs 'Hi, my name is Mike'
 ****************************************************************/
 
 /*** CHALLENGE 8 ***/
-
-class PersonClass {
-	constructor() {
-    // add code here
-
-
-	}
-
-	// add code here
-
+/*Create a class PersonClass. PersonClass should have a constructor that is passed an input of name and saves it to a property by the same name. PersonClass should also have a method called greet that logs the string 'hello'.
+*/
+class PersonClass{
+  constructor(name){
+    this.name = name;
+  }
+  greet(){
+    console.log("Hello");
+  }
 }
 
 
@@ -163,9 +162,14 @@ const george = new PersonClass;
 
 
 /*** CHALLENGE 9 ***/
-
+/*Create a class DeveloperClass that creates objects by extending the PersonClass class. In addition to having a name property and greet method, DeveloperClass should have an introduce method. When called, introduce should log the string 'Hello World, my name is [name]'.
+*/
 // add code here
-
+class DeveloperClass extends PersonClass{
+  introduce(){
+    console.log(`Hello World, my name is ${this.name}`);
+  }
+}
 
 // /********* Uncomment these lines to test your work! *********/
 // const thai = new DeveloperClass('Thai', 32);
