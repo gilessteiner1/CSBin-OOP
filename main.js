@@ -198,14 +198,15 @@ function userFactory(name, score) {
 
 /*** CHALLENGE 10 ***/
 
-const adminFunctionStore = {
-  // add code here
-}
+const adminFunctionStore = Object.create(userFunctionStore);
 
 /*** CHALLENGE 11, 12, 13 ***/
 
 function adminFactory(name, score) {
   // add code here
+  let admin = userFactory(name,score);
+  admin.type = "Admin";
+  return admin;
 }
 
 /*** CHALLENGE 14 ***/
