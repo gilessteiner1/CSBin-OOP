@@ -197,13 +197,23 @@ function userFactory(name, score) {
 }
 
 /*** CHALLENGE 10 ***/
-
+/*Create an object adminFunctionStore that has access to all methods in the userFunctionStore object, without copying them over individually.
+*/
 const adminFunctionStore = Object.create(userFunctionStore);
 
-/*** CHALLENGE 11, 12, 13 ***/
+/*** CHALLENGE 11 ***/
+/*Create an adminFactory function that creates an object with all the same data fields (and default values) as objects of the userFactory class, but without copying each data field individually.
+*/
 
+/*** CHALLENGE 12 ***/
+/*Then make sure the value of the 'type' field for adminFactory objects is 'Admin' instead of 'User'.
+*/
+
+/*** CHALLENGE 13 ***/
+/*Make sure that adminFactory objects have access to adminFunctionStore methods, without copying them over.
+*/
 function adminFactory(name, score) {
-  // add code here
+  //add code here
   let admin = userFactory(name,score);
   admin.type = "Admin";
   return admin;
@@ -211,10 +221,16 @@ function adminFactory(name, score) {
 
 /*** CHALLENGE 14 ***/
 /* Put code here for a method called sharePublicMessage*/
+userFunctionStore.sharePublicMessage = function(){
+  if(this.type==="Admin"){
+    console.log("Welcome users!");
+  }
+};
 
 const adminFromFactory = adminFactory("Eva", 5);
 
-// /********* Uncomment these lines to test your work! *********/
+
+/********* Uncomment these lines to test your work! *********/
 // adminFromFactory.sayType() // -> Logs "I am a Admin"
 // adminFromFactory.sharePublicMessage() // -> Logs "Welcome users!"
 
@@ -222,7 +238,9 @@ const adminFromFactory = adminFactory("Eva", 5);
 /****************************************************************
 EXTENSION: MIXINS
 ****************************************************************/
-
+/*** CHALLENGE 15 ***/
+/*Mixins are a tool in object-oriented programming that allows objects to be given methods and properties beyond those provided by their inheritance. For this challenge, complete the missing code, giving all of the robotMixin properties to robotFido. Do this in a single line of code, without adding the properties individually.
+*/
 class Dog {
   constructor() {
     this.legs = 4;
@@ -240,6 +258,7 @@ const robotMixin = {
 let robotFido = new Dog();
 
 // robotFido = /* Put code here to give Fido robot skills */;
+robotFido = Object.assign(robotFido,robotMixin);
 
 // /********* Uncomment to test your work! *********/
 // robotFido.speak() // -> Logs "I am made of metal"
